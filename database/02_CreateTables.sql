@@ -17,3 +17,11 @@ CREATE TABLE Sector
     Description NVARCHAR(500) NULL
 );
 GO
+
+ALTER TABLE Person
+DROP COLUMN Email;
+GO
+
+ALTER TABLE Person
+ADD TelegramUserName VARCHAR(50) NULL;
+GO

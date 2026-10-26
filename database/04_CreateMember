@@ -1,0 +1,18 @@
+
+USE EDGET_CharityDB;
+GO
+
+CREATE TABLE Member
+(
+    MemberID INT IDENTITY(1,1) PRIMARY KEY,
+    PersonID INT NOT NULL UNIQUE,
+    StudentID VARCHAR(50) NULL,
+    Department VARCHAR(50) NULL,
+    YearOfStudy TINYINT NULL,
+    JoinDate DATETIME NOT NULL DEFAULT GETDATE(),
+    Status BIT NOT NULL DEFAULT 1,
+
+    FOREIGN KEY (PersonID)
+        REFERENCES Person(PersonID)
+);
+GO

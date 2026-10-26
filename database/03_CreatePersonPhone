@@ -1,0 +1,15 @@
+
+USE EDGET_CharityDB;
+GO
+
+CREATE TABLE PersonPhone
+(
+    PersonPhoneID INT IDENTITY(1,1) PRIMARY KEY,
+    PersonID INT NOT NULL,
+    PhoneNumber VARCHAR(20) NOT NULL,
+    PhoneType VARCHAR(20) NULL,
+
+    FOREIGN KEY (PersonID)
+        REFERENCES Person(PersonID)
+);
+GO

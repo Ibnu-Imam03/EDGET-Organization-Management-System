@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="EDGET.Business/EDGET.Business.csproj" Id="36e30455-0259-4266-a2b3-e9ae0fa74bcd" />
+  <Project Path="EDGET.DataAccess/EDGET.DataAccess.csproj" Id="70c52d67-9f7c-4b14-a121-e3b73fc3b3bf" />
+  <Project Path="EDGET.Presentation/EDGET.Presentation.csproj" Id="49cf2ab0-c70c-4b6e-a0cd-0514df017062" />
+</Solution>

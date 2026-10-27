@@ -1,0 +1,13 @@
+
+USE EDGET_CharityDB;
+GO
+
+CREATE TABLE Sector
+(
+    SectorID INT IDENTITY(1,1) PRIMARY KEY,
+
+    SectorName NVARCHAR(100) NOT NULL UNIQUE,
+
+    Description NVARCHAR(500) NULL
+);
+GO

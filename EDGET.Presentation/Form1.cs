@@ -10,23 +10,23 @@ namespace EDGET.Presentation
         public FrmMain()
         {
             InitializeComponent();
-            DatabaseConnectionManager manager =
-       new DatabaseConnectionManager();
-
-            string result = manager.TestConnection();
-
-            MessageBox.Show(result);
+          
 
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            dgvPeople.DataSource = ClsPersonBusiness.GetAllPeople();
         }
 
         private void kryptonPanel1_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void kryptonPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

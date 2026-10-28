@@ -30,13 +30,16 @@
         {
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonPanel3 = new Krypton.Toolkit.KryptonPanel();
+            this.dgvPeople = new Krypton.Toolkit.KryptonDataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
+            this.kryptonPanel1.Controls.Add(this.dgvPeople);
             this.kryptonPanel1.Controls.Add(this.kryptonPanel3);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
@@ -52,6 +55,19 @@
             this.kryptonPanel3.PaletteMode = Krypton.Toolkit.PaletteMode.Office2007BlueDarkMode;
             this.kryptonPanel3.Size = new System.Drawing.Size(904, 78);
             this.kryptonPanel3.TabIndex = 1;
+            this.kryptonPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.kryptonPanel3_Paint);
+            // 
+            // dgvPeople
+            // 
+            this.dgvPeople.AllowUserToAddRows = false;
+            this.dgvPeople.AllowUserToDeleteRows = false;
+            this.dgvPeople.AllowUserToOrderColumns = true;
+            this.dgvPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPeople.Location = new System.Drawing.Point(146, 117);
+            this.dgvPeople.Name = "dgvPeople";
+            this.dgvPeople.ReadOnly = true;
+            this.dgvPeople.Size = new System.Drawing.Size(577, 277);
+            this.dgvPeople.TabIndex = 4;
             // 
             // FrmMain
             // 
@@ -68,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -76,6 +93,7 @@
 
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private Krypton.Toolkit.KryptonPanel kryptonPanel3;
+        private Krypton.Toolkit.KryptonDataGridView dgvPeople;
     }
 }
 

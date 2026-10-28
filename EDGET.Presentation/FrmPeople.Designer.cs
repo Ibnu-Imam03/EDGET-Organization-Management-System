@@ -28,28 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.lblTitle = new Krypton.Toolkit.KryptonLabel();
             this.lblSubtitle = new Krypton.Toolkit.KryptonLabel();
-            this.btnAddNew = new Krypton.Toolkit.KryptonButton();
-            this.btnUpdate = new Krypton.Toolkit.KryptonButton();
-            this.btnDelete = new Krypton.Toolkit.KryptonButton();
+            this.dgvPeople = new Krypton.Toolkit.KryptonDataGridView();
+            this.kryptonContextMenuItem1 = new Krypton.Toolkit.KryptonContextMenuItem();
+            this.kryptonContextMenuItem2 = new Krypton.Toolkit.KryptonContextMenuItem();
+            this.kryptonContextMenuItems1 = new Krypton.Toolkit.KryptonContextMenuItems();
+            this.kryptonContextMenuItems2 = new Krypton.Toolkit.KryptonContextMenuItems();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.addPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updatePersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletePersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPanel1
             // 
-            this.kryptonPanel1.Controls.Add(this.btnDelete);
-            this.kryptonPanel1.Controls.Add(this.btnUpdate);
-            this.kryptonPanel1.Controls.Add(this.btnAddNew);
             this.kryptonPanel1.Controls.Add(this.lblSubtitle);
             this.kryptonPanel1.Controls.Add(this.lblTitle);
             this.kryptonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.kryptonPanel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonPanel1.MaximumSize = new System.Drawing.Size(0, 100);
             this.kryptonPanel1.Name = "kryptonPanel1";
-            this.kryptonPanel1.Size = new System.Drawing.Size(1002, 100);
+            this.kryptonPanel1.Size = new System.Drawing.Size(890, 100);
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(105)))), ((int)(((byte)(170)))));
             this.kryptonPanel1.TabIndex = 0;
             // 
@@ -73,53 +79,60 @@
             this.lblSubtitle.TabIndex = 2;
             this.lblSubtitle.Values.Text = "Manage EDGET organization people";
             // 
-            // btnAddNew
+            // dgvPeople
             // 
-            this.btnAddNew.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNew.Location = new System.Drawing.Point(498, 55);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(160, 42);
-            this.btnAddNew.StateCommon.Back.Color1 = System.Drawing.Color.Cyan;
-            this.btnAddNew.StateCommon.Back.Color2 = System.Drawing.Color.Cyan;
-            this.btnAddNew.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnAddNew.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddNew.TabIndex = 3;
-            this.btnAddNew.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnAddNew.Values.Text = "Add New Person";
+            this.dgvPeople.AllowUserToAddRows = false;
+            this.dgvPeople.AllowUserToDeleteRows = false;
+            this.dgvPeople.AllowUserToOrderColumns = true;
+            this.dgvPeople.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPeople.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPeople.ContextMenuStrip = this.contextMenuStrip1;
+            this.dgvPeople.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPeople.Location = new System.Drawing.Point(0, 100);
+            this.dgvPeople.Name = "dgvPeople";
+            this.dgvPeople.ReadOnly = true;
+            this.dgvPeople.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPeople.Size = new System.Drawing.Size(890, 368);
+            this.dgvPeople.TabIndex = 3;
             // 
-            // btnUpdate
+            // contextMenuStrip1
             // 
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Location = new System.Drawing.Point(664, 55);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(160, 42);
-            this.btnUpdate.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnUpdate.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnUpdate.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnUpdate.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnUpdate.Values.Text = "Update Person";
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addPersonToolStripMenuItem,
+            this.updatePersonToolStripMenuItem,
+            this.deletePersonToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(152, 70);
             // 
-            // btnDelete
+            // addPersonToolStripMenuItem
             // 
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Location = new System.Drawing.Point(830, 55);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(160, 42);
-            this.btnDelete.StateCommon.Back.Color1 = System.Drawing.Color.Red;
-            this.btnDelete.StateCommon.Back.Color2 = System.Drawing.Color.Red;
-            this.btnDelete.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.btnDelete.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.TabIndex = 5;
-            this.btnDelete.Values.DropDownArrowColor = System.Drawing.Color.Empty;
-            this.btnDelete.Values.Text = "Delete Person";
+            this.addPersonToolStripMenuItem.Name = "addPersonToolStripMenuItem";
+            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addPersonToolStripMenuItem.Text = "Add Person";
+            this.addPersonToolStripMenuItem.Click += new System.EventHandler(this.addPersonToolStripMenuItem_Click);
+            // 
+            // updatePersonToolStripMenuItem
+            // 
+            this.updatePersonToolStripMenuItem.Name = "updatePersonToolStripMenuItem";
+            this.updatePersonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updatePersonToolStripMenuItem.Text = "Update Person";
+            this.updatePersonToolStripMenuItem.Click += new System.EventHandler(this.updatePersonToolStripMenuItem_Click);
+            // 
+            // deletePersonToolStripMenuItem
+            // 
+            this.deletePersonToolStripMenuItem.Name = "deletePersonToolStripMenuItem";
+            this.deletePersonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deletePersonToolStripMenuItem.Text = "Delete Person";
+            this.deletePersonToolStripMenuItem.Click += new System.EventHandler(this.deletePersonToolStripMenuItem_Click);
             // 
             // FrmPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1002, 468);
+            this.ClientSize = new System.Drawing.Size(890, 468);
+            this.Controls.Add(this.dgvPeople);
             this.Controls.Add(this.kryptonPanel1);
             this.Name = "FrmPeople";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -128,6 +141,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
             this.kryptonPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -137,8 +152,14 @@
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private Krypton.Toolkit.KryptonLabel lblTitle;
         private Krypton.Toolkit.KryptonLabel lblSubtitle;
-        private Krypton.Toolkit.KryptonButton btnAddNew;
-        private Krypton.Toolkit.KryptonButton btnDelete;
-        private Krypton.Toolkit.KryptonButton btnUpdate;
+        private Krypton.Toolkit.KryptonDataGridView dgvPeople;
+        private Krypton.Toolkit.KryptonContextMenuItem kryptonContextMenuItem1;
+        private Krypton.Toolkit.KryptonContextMenuItem kryptonContextMenuItem2;
+        private Krypton.Toolkit.KryptonContextMenuItems kryptonContextMenuItems1;
+        private Krypton.Toolkit.KryptonContextMenuItems kryptonContextMenuItems2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem addPersonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updatePersonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deletePersonToolStripMenuItem;
     }
 }

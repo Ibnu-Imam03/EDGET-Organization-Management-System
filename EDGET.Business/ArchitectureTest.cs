@@ -2,12 +2,14 @@
 
 namespace EDGET.Business
 {
-    public class ArchitectureTest
+    public class DatabaseConnectionManager
     {
-        public string GetMessage()
+        public string TestConnection()
         {
-            ConnectionTest dataAccess = new ConnectionTest();
-            return "Business Layer → " + dataAccess.GetMessage();
+            DatabaseConnectionTest test =
+                new DatabaseConnectionTest();
+
+            return test.TestConnection();
         }
     }
 }

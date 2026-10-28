@@ -10,14 +10,19 @@ namespace EDGET.Presentation
         public FrmMain()
         {
             InitializeComponent();
+            DatabaseConnectionManager manager =
+       new DatabaseConnectionManager();
 
-           
+            string result = manager.TestConnection();
+
+            MessageBox.Show(result);
+
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            ArchitectureTest test = new ArchitectureTest();
-            MessageBox.Show(test.GetMessage());
+           
         }
 
         private void kryptonPanel1_Paint(object sender, PaintEventArgs e)

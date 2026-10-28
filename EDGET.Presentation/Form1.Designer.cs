@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonPanel2 = new Krypton.Toolkit.KryptonPanel();
             this.kryptonPanel3 = new Krypton.Toolkit.KryptonPanel();

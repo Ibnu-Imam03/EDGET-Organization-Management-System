@@ -1,7 +1,8 @@
 ﻿
+using EDGET.Business;
+using EDGET.Presentation.Members;
 using System;
 using System.Windows.Forms;
-using EDGET.Business;
 
 namespace EDGET.Presentation
 {
@@ -42,6 +43,19 @@ namespace EDGET.Presentation
         {
             pnlSidebar.Visible = !pnlSidebar.Visible;
 
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            pnlContent.Controls.Clear();
+
+            pnlSidebar.Visible = true;
+        }
+
+        private void btnMembers_Click(object sender, EventArgs e)
+        {
+            pnlSidebar.Visible = false;
+            LoadFormInPanel(new FrmMembersList());
         }
     }
 }

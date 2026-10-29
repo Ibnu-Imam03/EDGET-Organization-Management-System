@@ -212,6 +212,7 @@
             this.btnMembers.TabIndex = 1;
             this.btnMembers.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnMembers.Values.Text = "Members";
+            this.btnMembers.Click += new System.EventHandler(this.btnMembers_Click);
             // 
             // btnDashboard
             // 
@@ -228,6 +229,7 @@
             this.btnDashboard.TabIndex = 0;
             this.btnDashboard.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnDashboard.Values.Text = "Dashboard";
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
             // pnlContent
             // 

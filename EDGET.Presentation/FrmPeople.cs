@@ -90,5 +90,19 @@ namespace EDGET.Presentation
                 MessageBox.Show("Failed to delete person.", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void showPersonInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvPeople.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a person first.", "No Person Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            int selectedRow = Convert.ToInt32(dgvPeople.CurrentRow.Cells["PersonID"].Value);
+
+            ShowPersonInfo frm = new ShowPersonInfo(selectedRow);
+            frm.ShowDialog();
+        }
     }
 }

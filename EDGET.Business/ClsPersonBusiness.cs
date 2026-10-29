@@ -61,7 +61,7 @@ namespace EDGET.Business
             return ClsPersonDataAccess.DeletePerson(PersonID);
         }
 
-        public static ClsPersonBusiness IsPersonExist(int PersonID)
+        public static ClsPersonBusiness GetPersonByID(int PersonID)
         {
             string FullName = string.Empty;
             string Gender = string.Empty;

@@ -32,6 +32,7 @@ namespace EDGET.Presentation
         {
             InitializeComponent();
             _PersonID = PersonID;
+            Person = ClsPersonBusiness.GetPersonByID(_PersonID);
             _Mode = enMode.Update;
             SetFormMode();
 
@@ -42,19 +43,27 @@ namespace EDGET.Presentation
             {
                 lblTitle.Text = "Add New Person";
                 Text = "Add New Person";
+                cmbSex.SelectedIndex = 0;
+
             }
             else
             {
                 lblTitle.Text = "Update Person";
                 Text = "Update Person";
+
             }
         }
         private void UploadPersonInfo()
         {
-             Person = ClsPersonBusiness.IsPersonExist(_PersonID);
 
             if (Person == null)
+            {
+                MessageBox.Show("Person not found.", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                Close();
                 return;
+            }
+
 
             txtFullName.Text = Person.FullName;
             cmbSex.SelectedItem = Person.Gender;
@@ -80,8 +89,7 @@ namespace EDGET.Presentation
             Person.Gender = cmbSex.SelectedIndex == 0 ? "Male" : "Female";
             Person.TelegramUserName = txtTelegramUsername.Text.Trim();
 
-            if (_Mode == enMode.Update)
-                Person.PersonID = _PersonID;
+            
 
             if (Person.Save())
             {
@@ -131,7 +139,7 @@ namespace EDGET.Presentation
         {
             if (cmbSex.SelectedIndex == -1)
             {
-                e.Cancel = true;
+                e.Cancel = true;    
                 errorProvider1.SetError(cmbSex, "Please select a sex.");
                 return;
             }
@@ -187,8 +195,9 @@ namespace EDGET.Presentation
             errorProvider1.SetError(txtTelegramUsername, "");
         }
 
-
-
-
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

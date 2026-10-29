@@ -1,6 +1,6 @@
 ﻿namespace EDGET.Presentation
 {
-    partial class FrmPeople
+    partial class FrmListOfPeople
     {
         /// <summary>
         /// Required designer variable.
@@ -30,18 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
-            this.lblTitle = new Krypton.Toolkit.KryptonLabel();
             this.lblSubtitle = new Krypton.Toolkit.KryptonLabel();
+            this.lblTitle = new Krypton.Toolkit.KryptonLabel();
             this.dgvPeople = new Krypton.Toolkit.KryptonDataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showPersonInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updatePersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletePersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kryptonContextMenuItem1 = new Krypton.Toolkit.KryptonContextMenuItem();
             this.kryptonContextMenuItem2 = new Krypton.Toolkit.KryptonContextMenuItem();
             this.kryptonContextMenuItems1 = new Krypton.Toolkit.KryptonContextMenuItems();
             this.kryptonContextMenuItems2 = new Krypton.Toolkit.KryptonContextMenuItems();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updatePersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletePersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showPersonInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeople)).BeginInit();
@@ -60,16 +60,6 @@
             this.kryptonPanel1.StateCommon.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(105)))), ((int)(((byte)(170)))));
             this.kryptonPanel1.TabIndex = 0;
             // 
-            // lblTitle
-            // 
-            this.lblTitle.Location = new System.Drawing.Point(12, 9);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(408, 45);
-            this.lblTitle.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
-            this.lblTitle.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Values.Text = "EDGET People Management";
-            // 
             // lblSubtitle
             // 
             this.lblSubtitle.Location = new System.Drawing.Point(28, 60);
@@ -79,6 +69,16 @@
             this.lblSubtitle.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtitle.TabIndex = 2;
             this.lblSubtitle.Values.Text = "Manage EDGET organization people";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(408, 45);
+            this.lblTitle.StateCommon.ShortText.Color1 = System.Drawing.Color.White;
+            this.lblTitle.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Values.Text = "EDGET People Management";
             // 
             // dgvPeople
             // 
@@ -106,44 +106,44 @@
             this.updatePersonToolStripMenuItem,
             this.deletePersonToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(167, 92);
+            // 
+            // showPersonInfoToolStripMenuItem
+            // 
+            this.showPersonInfoToolStripMenuItem.Name = "showPersonInfoToolStripMenuItem";
+            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.showPersonInfoToolStripMenuItem.Text = "Show Person Info";
+            this.showPersonInfoToolStripMenuItem.Click += new System.EventHandler(this.showPersonInfoToolStripMenuItem_Click);
             // 
             // addPersonToolStripMenuItem
             // 
             this.addPersonToolStripMenuItem.Name = "addPersonToolStripMenuItem";
-            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addPersonToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.addPersonToolStripMenuItem.Text = "Add Person";
             this.addPersonToolStripMenuItem.Click += new System.EventHandler(this.addPersonToolStripMenuItem_Click);
             // 
             // updatePersonToolStripMenuItem
             // 
             this.updatePersonToolStripMenuItem.Name = "updatePersonToolStripMenuItem";
-            this.updatePersonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updatePersonToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.updatePersonToolStripMenuItem.Text = "Update Person";
             this.updatePersonToolStripMenuItem.Click += new System.EventHandler(this.updatePersonToolStripMenuItem_Click);
             // 
             // deletePersonToolStripMenuItem
             // 
             this.deletePersonToolStripMenuItem.Name = "deletePersonToolStripMenuItem";
-            this.deletePersonToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deletePersonToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.deletePersonToolStripMenuItem.Text = "Delete Person";
             this.deletePersonToolStripMenuItem.Click += new System.EventHandler(this.deletePersonToolStripMenuItem_Click);
             // 
-            // showPersonInfoToolStripMenuItem
-            // 
-            this.showPersonInfoToolStripMenuItem.Name = "showPersonInfoToolStripMenuItem";
-            this.showPersonInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.showPersonInfoToolStripMenuItem.Text = "Show Person Info";
-            this.showPersonInfoToolStripMenuItem.Click += new System.EventHandler(this.showPersonInfoToolStripMenuItem_Click);
-            // 
-            // FrmPeople
+            // FrmListOfPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(890, 468);
             this.Controls.Add(this.dgvPeople);
             this.Controls.Add(this.kryptonPanel1);
-            this.Name = "FrmPeople";
+            this.Name = "FrmListOfPeople";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EDGET — People Management";
             this.Load += new System.EventHandler(this.FrmPeople_Load);

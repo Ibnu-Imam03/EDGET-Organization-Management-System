@@ -61,7 +61,7 @@
             this.ClientSize = new System.Drawing.Size(744, 422);
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.uC_PersonInfo1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ShowPersonInfo";
             this.Text = "ShowPersonInfo";
             this.Load += new System.EventHandler(this.ShowPersonInfo_Load);

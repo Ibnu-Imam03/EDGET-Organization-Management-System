@@ -11,9 +11,9 @@ using EDGET.Business;
 
 namespace EDGET.Presentation
 {
-    public partial class FrmPeople : Form
+    public partial class FrmListOfPeople : Form
     {
-        public FrmPeople()
+        public FrmListOfPeople()
         {
             InitializeComponent();
         }

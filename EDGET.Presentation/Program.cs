@@ -16,7 +16,7 @@ namespace EDGET.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPeople());
+            Application.Run(new FrmMain());
         }
     }
 }

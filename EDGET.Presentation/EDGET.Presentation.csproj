@@ -87,6 +87,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Members\FrmAddEditMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Members\FrmAddEditMember.Designer.cs">
+      <DependentUpon>FrmAddEditMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Members\FrmMembersList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Members\FrmAddEditMember.resx">
+      <DependentUpon>FrmAddEditMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Members\FrmMembersList.resx">
       <DependentUpon>FrmMembersList.cs</DependentUpon>

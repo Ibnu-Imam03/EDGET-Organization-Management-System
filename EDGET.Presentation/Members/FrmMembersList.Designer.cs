@@ -73,6 +73,7 @@
             this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMembers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMembers.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvMembers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMembers.Location = new System.Drawing.Point(0, 98);
             this.dgvMembers.Name = "dgvMembers";
@@ -90,7 +91,7 @@
             this.updateMemberToolStripMenuItem,
             this.deleteMemeberToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(176, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
             // 
             // showMembersInfoToolStripMenuItem
             // 
@@ -103,18 +104,21 @@
             this.addNewMemberToolStripMenuItem.Name = "addNewMemberToolStripMenuItem";
             this.addNewMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewMemberToolStripMenuItem.Text = "Add New Member";
+            this.addNewMemberToolStripMenuItem.Click += new System.EventHandler(this.addNewMemberToolStripMenuItem_Click);
             // 
             // deleteMemeberToolStripMenuItem
             // 
             this.deleteMemeberToolStripMenuItem.Name = "deleteMemeberToolStripMenuItem";
-            this.deleteMemeberToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.deleteMemeberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteMemeberToolStripMenuItem.Text = "Delete Memeber";
+            this.deleteMemeberToolStripMenuItem.Click += new System.EventHandler(this.deleteMemeberToolStripMenuItem_Click);
             // 
             // updateMemberToolStripMenuItem
             // 
             this.updateMemberToolStripMenuItem.Name = "updateMemberToolStripMenuItem";
-            this.updateMemberToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.updateMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateMemberToolStripMenuItem.Text = "Update Member";
+            this.updateMemberToolStripMenuItem.Click += new System.EventHandler(this.updateMemberToolStripMenuItem_Click);
             // 
             // FrmMembersList
             // 

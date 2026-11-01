@@ -40,6 +40,11 @@
             this.btnSave = new Krypton.Toolkit.KryptonButton();
             this.btnCancel = new Krypton.Toolkit.KryptonButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.TxtNumber = new Krypton.Toolkit.KryptonTextBox();
+            this.TxtNumber2 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxtNumber3 = new Krypton.Toolkit.KryptonTextBox();
+            this.TxtNumber4 = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanelHeader)).BeginInit();
             this.kryptonPanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbSex)).BeginInit();
@@ -122,7 +127,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(85, 305);
+            this.btnSave.Location = new System.Drawing.Point(85, 358);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(190, 41);
             this.btnSave.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -133,7 +138,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(304, 305);
+            this.btnCancel.Location = new System.Drawing.Point(304, 358);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(190, 41);
             this.btnCancel.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -147,12 +152,54 @@
             this.errorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider1.ContainerControl = this;
             // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(12, 287);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(138, 26);
+            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel1.TabIndex = 9;
+            this.kryptonLabel1.Values.Text = "Phone Number : ";
+            // 
+            // TxtNumber
+            // 
+            this.TxtNumber.Location = new System.Drawing.Point(12, 319);
+            this.TxtNumber.Name = "TxtNumber";
+            this.TxtNumber.Size = new System.Drawing.Size(107, 23);
+            this.TxtNumber.TabIndex = 10;
+            // 
+            // TxtNumber2
+            // 
+            this.TxtNumber2.Location = new System.Drawing.Point(148, 319);
+            this.TxtNumber2.Name = "TxtNumber2";
+            this.TxtNumber2.Size = new System.Drawing.Size(107, 23);
+            this.TxtNumber2.TabIndex = 11;
+            // 
+            // TxtNumber3
+            // 
+            this.TxtNumber3.Location = new System.Drawing.Point(281, 319);
+            this.TxtNumber3.Name = "TxtNumber3";
+            this.TxtNumber3.Size = new System.Drawing.Size(107, 23);
+            this.TxtNumber3.TabIndex = 12;
+            // 
+            // TxtNumber4
+            // 
+            this.TxtNumber4.Location = new System.Drawing.Point(420, 319);
+            this.TxtNumber4.Name = "TxtNumber4";
+            this.TxtNumber4.Size = new System.Drawing.Size(107, 23);
+            this.TxtNumber4.TabIndex = 13;
+            // 
             // FrmAddEditPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(584, 411);
+            this.Controls.Add(this.TxtNumber4);
+            this.Controls.Add(this.TxtNumber3);
+            this.Controls.Add(this.TxtNumber2);
+            this.Controls.Add(this.TxtNumber);
+            this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtTelegramUsername);
@@ -192,5 +239,10 @@
         private Krypton.Toolkit.KryptonButton btnSave;
         private Krypton.Toolkit.KryptonButton btnCancel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonTextBox TxtNumber4;
+        private Krypton.Toolkit.KryptonTextBox TxtNumber3;
+        private Krypton.Toolkit.KryptonTextBox TxtNumber2;
+        private Krypton.Toolkit.KryptonTextBox TxtNumber;
     }
 }

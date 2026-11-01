@@ -38,6 +38,11 @@
             this.txtTelegramUsername = new Krypton.Toolkit.KryptonTextBox();
             this.kryptonPanel1 = new Krypton.Toolkit.KryptonPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtPhone1 = new Krypton.Toolkit.KryptonTextBox();
+            this.kryptonLabel1 = new Krypton.Toolkit.KryptonLabel();
+            this.txtPhone2 = new Krypton.Toolkit.KryptonTextBox();
+            this.txtPhone3 = new Krypton.Toolkit.KryptonTextBox();
+            this.txtPhone4 = new Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -132,11 +137,57 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Person Info";
             // 
+            // txtPhone1
+            // 
+            this.txtPhone1.Location = new System.Drawing.Point(147, 300);
+            this.txtPhone1.Name = "txtPhone1";
+            this.txtPhone1.ReadOnly = true;
+            this.txtPhone1.Size = new System.Drawing.Size(119, 23);
+            this.txtPhone1.TabIndex = 11;
+            // 
+            // kryptonLabel1
+            // 
+            this.kryptonLabel1.Location = new System.Drawing.Point(60, 303);
+            this.kryptonLabel1.Name = "kryptonLabel1";
+            this.kryptonLabel1.Size = new System.Drawing.Size(70, 26);
+            this.kryptonLabel1.StateCommon.ShortText.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kryptonLabel1.TabIndex = 10;
+            this.kryptonLabel1.Values.Text = "Phone : ";
+            // 
+            // txtPhone2
+            // 
+            this.txtPhone2.Location = new System.Drawing.Point(305, 300);
+            this.txtPhone2.Name = "txtPhone2";
+            this.txtPhone2.ReadOnly = true;
+            this.txtPhone2.Size = new System.Drawing.Size(119, 23);
+            this.txtPhone2.TabIndex = 12;
+            // 
+            // txtPhone3
+            // 
+            this.txtPhone3.Location = new System.Drawing.Point(455, 300);
+            this.txtPhone3.Name = "txtPhone3";
+            this.txtPhone3.ReadOnly = true;
+            this.txtPhone3.Size = new System.Drawing.Size(119, 23);
+            this.txtPhone3.TabIndex = 13;
+            // 
+            // txtPhone4
+            // 
+            this.txtPhone4.Location = new System.Drawing.Point(594, 300);
+            this.txtPhone4.Name = "txtPhone4";
+            this.txtPhone4.ReadOnly = true;
+            this.txtPhone4.Size = new System.Drawing.Size(119, 23);
+            this.txtPhone4.TabIndex = 14;
+            // 
             // UC_PersonInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.txtPhone4);
+            this.Controls.Add(this.txtPhone3);
+            this.Controls.Add(this.txtPhone2);
+            this.Controls.Add(this.txtPhone1);
+            this.Controls.Add(this.kryptonLabel1);
             this.Controls.Add(this.txtTelegramUsername);
             this.Controls.Add(this.txtSex);
             this.Controls.Add(this.txtFullName);
@@ -147,7 +198,7 @@
             this.Controls.Add(this.kryptonLabel2);
             this.Controls.Add(this.kryptonPanel1);
             this.Name = "UC_PersonInfo";
-            this.Size = new System.Drawing.Size(791, 313);
+            this.Size = new System.Drawing.Size(791, 344);
             this.Load += new System.EventHandler(this.UC_PersonInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).EndInit();
             this.kryptonPanel1.ResumeLayout(false);
@@ -168,5 +219,10 @@
         private Krypton.Toolkit.KryptonTextBox txtTelegramUsername;
         private Krypton.Toolkit.KryptonPanel kryptonPanel1;
         private System.Windows.Forms.Label label1;
+        private Krypton.Toolkit.KryptonTextBox txtPhone1;
+        private Krypton.Toolkit.KryptonLabel kryptonLabel1;
+        private Krypton.Toolkit.KryptonTextBox txtPhone2;
+        private Krypton.Toolkit.KryptonTextBox txtPhone3;
+        private Krypton.Toolkit.KryptonTextBox txtPhone4;
     }
 }

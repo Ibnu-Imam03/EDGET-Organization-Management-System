@@ -41,6 +41,11 @@ namespace EDGET.Presentation
             txtFullName.Text = person.FullName;
             txtSex.Text = person.Gender;
             txtTelegramUsername.Text = person.TelegramUserName;
+            txtPhone1.Text = person.Phone1;
+            txtPhone2.Text = person.Phone2;
+            txtPhone3.Text = person.Phone3;
+            txtPhone4.Text = person.Phone4;
+
         }
 
         public void ClearPersonInfo()
@@ -49,6 +54,12 @@ namespace EDGET.Presentation
             txtFullName.Clear();
             txtSex.Clear();
             txtTelegramUsername.Clear();
+            txtPhone1.Clear();
+            txtPhone2.Clear();
+            txtPhone3.Clear();
+            txtPhone4.Clear();
+
+
         }
 
         private void txtFullName_TextChanged(object sender, EventArgs e)

@@ -36,7 +36,9 @@ namespace EDGET.Presentation
         {
             pnlSidebar.Visible = false;
 
-            LoadFormInPanel(new FrmListOfPeople());
+            FrmListOfPeople frm = new FrmListOfPeople();
+            frm.Show(); 
+
         }
 
         private void kryptonButton1_Click(object sender, EventArgs e)

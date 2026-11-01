@@ -9,19 +9,25 @@ namespace EDGET.DataAccess
     {
         public static DataTable GetAllPeople()
         {
-            string query = "SELECT * FROM Person";
+            DataTable dt = new DataTable();
+
 
             using (SqlConnection connection = DbConnectionFactory.GetConnection())
             {
-                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                using (SqlCommand command = new SqlCommand("SP_GetAllPeopleWithPhones", connection))
                 {
-                    DataTable dt = new DataTable();
 
-                    adapter.Fill(dt);
+                    command.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
 
-                    return dt;
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        dt.Load(reader);
+                    }
                 }
             }
+            return dt;
+
         }
 
 
@@ -81,46 +87,54 @@ namespace EDGET.DataAccess
             }
         }
 
-        public static int AddNewPerson(string FullName, string Sex, string TelegramUserName)
+        public static int AddNewPerson(string FullName, string Sex, string TelegramUserName,
+                                string Phone1, string Phone2, string Phone3, string Phone4)
         {
-            int ID = -1;
-
-            using (SqlConnection connection = DbConnectionFactory.GetConnection())
+            try
             {
-                string query = @" INSERT INTO Person (FullName, Sex, TelegramUserName) VALUES (@FullName, @Sex, @TelegramUserName);
-                                  SELECT CAST(SCOPE_IDENTITY() AS INT);";
-
-                using (SqlCommand cmd = new SqlCommand(query, connection))
+                using (SqlConnection connection = DbConnectionFactory.GetConnection())
+                using (SqlCommand cmd = new SqlCommand("SP_AddNewPerson", connection))
                 {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
                     cmd.Parameters.Add("@FullName", SqlDbType.NVarChar, 100).Value = FullName;
                     cmd.Parameters.Add("@Sex", SqlDbType.NVarChar, 20).Value = Sex;
-                    cmd.Parameters.Add("@TelegramUserName", SqlDbType.NVarChar, 100).Value = TelegramUserName;
+                    cmd.Parameters.Add("@TelegramUserName", SqlDbType.NVarChar, 100).Value =
+                        string.IsNullOrWhiteSpace(TelegramUserName) ? (object)DBNull.Value : TelegramUserName;
+
+                    cmd.Parameters.Add("@Phone1", SqlDbType.NVarChar, 20).Value =
+                        string.IsNullOrWhiteSpace(Phone1) ? (object)DBNull.Value : Phone1.Trim();
+
+                    cmd.Parameters.Add("@Phone2", SqlDbType.NVarChar, 20).Value =
+                        string.IsNullOrWhiteSpace(Phone2) ? (object)DBNull.Value : Phone2.Trim();
+
+                    cmd.Parameters.Add("@Phone3", SqlDbType.NVarChar, 20).Value =
+                        string.IsNullOrWhiteSpace(Phone3) ? (object)DBNull.Value : Phone3.Trim();
+
+                    cmd.Parameters.Add("@Phone4", SqlDbType.NVarChar, 20).Value =
+                        string.IsNullOrWhiteSpace(Phone4) ? (object)DBNull.Value : Phone4.Trim();
 
                     connection.Open();
 
-                    object result = cmd.ExecuteScalar();
-
-                    if (result != null && result != DBNull.Value)
-                    {
-                        ID = Convert.ToInt32(result);
-                    }
-
-                    return ID;
+                    return Convert.ToInt32(cmd.ExecuteScalar());
                 }
+            }
+            catch (Exception)
+            {
+                return -1;
             }
         }
 
-
-        public static bool GetPersonByID(int ID,ref string FullName,ref string Sex,ref string TelegramUserName){
+        public static bool GetPersonByID(int ID, ref string FullName, ref string Sex, ref string TelegramUserName, ref string Phone1, ref string Phone2, ref string Phone3, ref string Phone4)
+        {
             try
             {
                 using (SqlConnection conn = DbConnectionFactory.GetConnection())
                 {
-                    string query = @"SELECT FullName, Sex, TelegramUserName FROM Person WHERE PersonID = @ID";
-
-                    using (SqlCommand command = new SqlCommand(query, conn))
+                    using (SqlCommand command = new SqlCommand("SP_GetPersonByID", conn))
                     {
-                        command.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@PersonID", ID);
 
                         conn.Open();
 
@@ -132,22 +146,24 @@ namespace EDGET.DataAccess
                                 Sex = reader["Sex"].ToString();
                                 TelegramUserName = reader["TelegramUserName"].ToString();
 
+                                Phone1 = reader["Phone1"] == DBNull.Value ? "" : reader["Phone1"].ToString();
+                                Phone2 = reader["Phone2"] == DBNull.Value ? "" : reader["Phone2"].ToString();
+                                Phone3 = reader["Phone3"] == DBNull.Value ? "" : reader["Phone3"].ToString();
+                                Phone4 = reader["Phone4"] == DBNull.Value ? "" : reader["Phone4"].ToString();
+
                                 return true;
                             }
-                            else
-                            {
-                                return false;
-                            }
+
+                            return false;
                         }
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
         }
-
         public static bool IsPersonExist(int ID)
         {
             using (SqlConnection connection = DbConnectionFactory.GetConnection())

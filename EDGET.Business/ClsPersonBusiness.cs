@@ -14,21 +14,38 @@ namespace EDGET.Business
         public string Gender { get; set; }
         public string TelegramUserName { get; set; }
 
+        public string Phone1 { get; set; }
+        public string Phone2 { get; set; }
+        public string Phone3 { get; set; }
+        public string Phone4 { get; set; }
+
         public ClsPersonBusiness()
         {
             PersonID = -1;
             FullName = string.Empty;
             Gender = string.Empty;
             TelegramUserName = string.Empty;
+
+            Phone1 = string.Empty;
+            Phone2 = string.Empty;
+            Phone3 = string.Empty;
+            Phone4 = string.Empty;
+
             _Mode = enMode.New;
         }
 
-        private ClsPersonBusiness(int PersonID,string FullName,string Gender,string TelegramUserName)
-        {
+        private ClsPersonBusiness(int PersonID,string FullName,string Gender,string TelegramUserName,string Phone1,
+            string Phone2,string Phone3,string Phone4){
             this.PersonID = PersonID;
             this.FullName = FullName;
             this.Gender = Gender;
             this.TelegramUserName = TelegramUserName;
+
+            this.Phone1 = Phone1;
+            this.Phone2 = Phone2;
+            this.Phone3 = Phone3;
+            this.Phone4 = Phone4;
+
             _Mode = enMode.Update;
         }
 
@@ -39,12 +56,13 @@ namespace EDGET.Business
 
         private bool UpdatePerson()
         {
-            return ClsPersonDataAccess.UpdatePerson(PersonID,FullName,Gender,TelegramUserName);
+            return ClsPersonDataAccess.UpdatePerson(
+                PersonID, FullName, Gender, TelegramUserName);
         }
 
         private bool AddNewPerson()
         {
-            int ID = ClsPersonDataAccess.AddNewPerson(FullName,Gender,TelegramUserName);
+            int ID = ClsPersonDataAccess.AddNewPerson(FullName, Gender, TelegramUserName, Phone1, Phone2, Phone3, Phone4);
 
             if (ID != -1)
             {
@@ -67,9 +85,14 @@ namespace EDGET.Business
             string Gender = string.Empty;
             string TelegramUserName = string.Empty;
 
-            if (ClsPersonDataAccess.GetPersonByID(PersonID,ref FullName,ref Gender,ref TelegramUserName))
+            string Phone1 = string.Empty;
+            string Phone2 = string.Empty;
+            string Phone3 = string.Empty;
+            string Phone4 = string.Empty;
+
+            if (ClsPersonDataAccess.GetPersonByID(PersonID,ref FullName,ref Gender,ref TelegramUserName,ref Phone1,ref Phone2,ref Phone3,ref Phone4))
             {
-                return new ClsPersonBusiness(PersonID,FullName,Gender,TelegramUserName);
+                return new ClsPersonBusiness(PersonID,FullName,Gender,TelegramUserName,Phone1,Phone2,Phone3,Phone4);
             }
 
             return null;

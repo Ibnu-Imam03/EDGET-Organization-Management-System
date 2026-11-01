@@ -24,12 +24,18 @@ namespace EDGET.Presentation
         {
 
 
-
             dgvPeople.DataSource = ClsPersonBusiness.GetAllPeople();
+
             dgvPeople.Columns["PersonID"].HeaderText = "ID";
             dgvPeople.Columns["FullName"].HeaderText = "Full Name";
             dgvPeople.Columns["Sex"].HeaderText = "Sex";
             dgvPeople.Columns["TelegramUserName"].HeaderText = "Telegram Username";
+
+            dgvPeople.Columns["Phone1"].HeaderText = "Phone 1";
+            dgvPeople.Columns["Phone2"].HeaderText = "Phone 2";
+            dgvPeople.Columns["Phone3"].HeaderText = "Phone 3";
+            dgvPeople.Columns["Phone4"].HeaderText = "Phone 4";
+
 
 
         }

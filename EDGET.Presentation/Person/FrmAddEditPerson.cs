@@ -16,6 +16,8 @@ namespace EDGET.Presentation
 
         public int SavedPersonID { get; private set; }
 
+        public Action<int> OnPersonSaved;
+
         public FrmAddEditPerson()
         {
             InitializeComponent();
@@ -108,8 +110,7 @@ namespace EDGET.Presentation
         {
             if (!ValidateChildren())
             {
-                MessageBox.Show("Please correct the errors before saving.",
-                    "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please correct the errors before saving.","Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -130,26 +131,22 @@ namespace EDGET.Presentation
 
             if (Person.Save())
             {
+                OnPersonSaved?.Invoke(Person.PersonID);
+
                 SavedPersonID = Person.PersonID;
 
-                string message = _Mode == enMode.New
-                    ? "Person added successfully."
-                    : "Person updated successfully.";
+                string message = _Mode == enMode.New? "Person added successfully.": "Person updated successfully.";
 
-                MessageBox.Show(message, "Success",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(message, "Success",MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 DialogResult = DialogResult.OK;
                 Close();
             }
             else
             {
-                string message = _Mode == enMode.New
-                    ? "Failed to add person."
-                    : "Failed to update person.";
+                string message = _Mode == enMode.New? "Failed to add person.": "Failed to update person.";
 
-                MessageBox.Show(message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(message, "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

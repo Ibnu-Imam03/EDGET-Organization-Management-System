@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlHeader = new Krypton.Toolkit.KryptonPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnMenu = new Krypton.Toolkit.KryptonButton();
             this.pnlSidebar = new Krypton.Toolkit.KryptonPanel();
             this.btnEvents = new Krypton.Toolkit.KryptonButton();
@@ -41,7 +42,7 @@
             this.btnMembers = new Krypton.Toolkit.KryptonButton();
             this.btnDashboard = new Krypton.Toolkit.KryptonButton();
             this.pnlContent = new Krypton.Toolkit.KryptonPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnFamily = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.pnlHeader)).BeginInit();
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlSidebar)).BeginInit();
@@ -56,10 +57,22 @@
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(874, 100);
+            this.pnlHeader.Size = new System.Drawing.Size(924, 100);
             this.pnlHeader.StateCommon.Color1 = System.Drawing.Color.Blue;
             this.pnlHeader.StateCommon.Color2 = System.Drawing.Color.Blue;
             this.pnlHeader.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(106, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(592, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "EDGET — Organization Management System";
             // 
             // btnMenu
             // 
@@ -76,6 +89,7 @@
             // 
             // pnlSidebar
             // 
+            this.pnlSidebar.Controls.Add(this.btnFamily);
             this.pnlSidebar.Controls.Add(this.btnEvents);
             this.pnlSidebar.Controls.Add(this.btnDocuments);
             this.pnlSidebar.Controls.Add(this.btnZiyara);
@@ -88,13 +102,13 @@
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 100);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(233, 420);
+            this.pnlSidebar.Size = new System.Drawing.Size(233, 442);
             this.pnlSidebar.StateCommon.Color1 = System.Drawing.Color.Cyan;
             this.pnlSidebar.TabIndex = 1;
             // 
             // btnEvents
             // 
-            this.btnEvents.Location = new System.Drawing.Point(46, 332);
+            this.btnEvents.Location = new System.Drawing.Point(46, 363);
             this.btnEvents.Name = "btnEvents";
             this.btnEvents.Size = new System.Drawing.Size(118, 25);
             this.btnEvents.StateCommon.Back.Color1 = System.Drawing.Color.Cyan;
@@ -109,7 +123,7 @@
             // 
             // btnDocuments
             // 
-            this.btnDocuments.Location = new System.Drawing.Point(46, 377);
+            this.btnDocuments.Location = new System.Drawing.Point(46, 408);
             this.btnDocuments.Name = "btnDocuments";
             this.btnDocuments.Size = new System.Drawing.Size(118, 25);
             this.btnDocuments.StateCommon.Back.Color1 = System.Drawing.Color.Cyan;
@@ -124,7 +138,7 @@
             // 
             // btnZiyara
             // 
-            this.btnZiyara.Location = new System.Drawing.Point(46, 243);
+            this.btnZiyara.Location = new System.Drawing.Point(46, 274);
             this.btnZiyara.Name = "btnZiyara";
             this.btnZiyara.Size = new System.Drawing.Size(118, 25);
             this.btnZiyara.StateCommon.Back.Color1 = System.Drawing.Color.Cyan;
@@ -139,7 +153,7 @@
             // 
             // btnFinance
             // 
-            this.btnFinance.Location = new System.Drawing.Point(46, 291);
+            this.btnFinance.Location = new System.Drawing.Point(46, 322);
             this.btnFinance.Name = "btnFinance";
             this.btnFinance.Size = new System.Drawing.Size(118, 25);
             this.btnFinance.StateCommon.Back.Color1 = System.Drawing.Color.Cyan;
@@ -154,7 +168,7 @@
             // 
             // btnAcademic
             // 
-            this.btnAcademic.Location = new System.Drawing.Point(46, 199);
+            this.btnAcademic.Location = new System.Drawing.Point(46, 230);
             this.btnAcademic.Name = "btnAcademic";
             this.btnAcademic.Size = new System.Drawing.Size(118, 25);
             this.btnAcademic.StateCommon.Back.Color1 = System.Drawing.Color.Cyan;
@@ -169,7 +183,7 @@
             // 
             // btnChildren
             // 
-            this.btnChildren.Location = new System.Drawing.Point(46, 155);
+            this.btnChildren.Location = new System.Drawing.Point(46, 186);
             this.btnChildren.Name = "btnChildren";
             this.btnChildren.Size = new System.Drawing.Size(118, 25);
             this.btnChildren.StateCommon.Back.Color1 = System.Drawing.Color.Cyan;
@@ -236,27 +250,30 @@
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(233, 100);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(641, 420);
+            this.pnlContent.Size = new System.Drawing.Size(691, 442);
             this.pnlContent.TabIndex = 2;
             // 
-            // label1
+            // btnFamily
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(106, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(592, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "EDGET — Organization Management System";
+            this.btnFamily.Location = new System.Drawing.Point(46, 144);
+            this.btnFamily.Name = "btnFamily";
+            this.btnFamily.Size = new System.Drawing.Size(118, 25);
+            this.btnFamily.StateCommon.Back.Color1 = System.Drawing.Color.Cyan;
+            this.btnFamily.StateCommon.Back.Color2 = System.Drawing.Color.Cyan;
+            this.btnFamily.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.None;
+            this.btnFamily.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.Red;
+            this.btnFamily.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFamily.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnFamily.TabIndex = 9;
+            this.btnFamily.Values.DropDownArrowColor = System.Drawing.Color.Empty;
+            this.btnFamily.Values.Text = "Family";
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(874, 520);
+            this.ClientSize = new System.Drawing.Size(924, 542);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlSidebar);
             this.Controls.Add(this.pnlHeader);
@@ -292,6 +309,7 @@
         private Krypton.Toolkit.KryptonButton btnFinance;
         private Krypton.Toolkit.KryptonButton btnMenu;
         private System.Windows.Forms.Label label1;
+        private Krypton.Toolkit.KryptonButton btnFamily;
     }
 }
 

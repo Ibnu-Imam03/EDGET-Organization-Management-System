@@ -125,7 +125,7 @@ namespace EDGET.Presentation
 
             if (!int.TryParse(txtPersonID.Text.Trim(), out personID))
             {
-                MessageBox.Show("Please enter a valid Person ID.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid Person ID.","Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 txtPersonID.Focus();
                 return;
@@ -135,20 +135,27 @@ namespace EDGET.Presentation
 
             if (_Person == null)
             {
-                MessageBox.Show("Person not found!", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Person not found!","Not Found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 txtPersonID.Focus();
                 return;
             }
-
-            MessageBox.Show("Person Found Successfully!\n\n" + "Person ID: " + _Person.PersonID + "\n" + "Full Name: " + _Person.FullName + "\n" + "Gender: "
-                + _Person.Gender, "Person Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void AddNewPerson_OnPersonSaved(int PersonID)
+        {
+            txtPersonID.Text = PersonID.ToString();
+
+            // Optional: automatically load the newly saved Person.
+            btnFind_Click_1(null, EventArgs.Empty);
+        }
+
 
         private void btnAddNew_Click_1(object sender, EventArgs e)
         {
             using (FrmAddEditPerson frm = new FrmAddEditPerson())
             {
+                frm.OnPersonSaved = AddNewPerson_OnPersonSaved;
                 frm.ShowDialog();
             }
         }
@@ -178,6 +185,8 @@ namespace EDGET.Presentation
                 MessageBox.Show("Failed to save member!",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            FrmAddEditMember_Load(null, null);
         }
 
         private void btnClose_Click_1(object sender, EventArgs e)

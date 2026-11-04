@@ -72,5 +72,14 @@ namespace EDGET.Presentation.Members
 
             FrmMembersList_Load(null, null);
         }
+
+        private void showMembersInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int memberID = Convert.ToInt32(dgvMembers.CurrentRow.Cells["MemberID"].Value);
+
+            frmShowMember frm = new frmShowMember(memberID);
+
+            frm.Show();
+        }
     }
 }

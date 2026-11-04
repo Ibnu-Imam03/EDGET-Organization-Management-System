@@ -35,8 +35,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showMembersInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteMemeberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteMemeberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonPanel1)).BeginInit();
             this.kryptonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
@@ -98,27 +98,28 @@
             this.showMembersInfoToolStripMenuItem.Name = "showMembersInfoToolStripMenuItem";
             this.showMembersInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.showMembersInfoToolStripMenuItem.Text = "Show Member Info";
+            this.showMembersInfoToolStripMenuItem.Click += new System.EventHandler(this.showMembersInfoToolStripMenuItem_Click);
             // 
             // addNewMemberToolStripMenuItem
             // 
             this.addNewMemberToolStripMenuItem.Name = "addNewMemberToolStripMenuItem";
-            this.addNewMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewMemberToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.addNewMemberToolStripMenuItem.Text = "Add New Member";
             this.addNewMemberToolStripMenuItem.Click += new System.EventHandler(this.addNewMemberToolStripMenuItem_Click);
-            // 
-            // deleteMemeberToolStripMenuItem
-            // 
-            this.deleteMemeberToolStripMenuItem.Name = "deleteMemeberToolStripMenuItem";
-            this.deleteMemeberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deleteMemeberToolStripMenuItem.Text = "Delete Memeber";
-            this.deleteMemeberToolStripMenuItem.Click += new System.EventHandler(this.deleteMemeberToolStripMenuItem_Click);
             // 
             // updateMemberToolStripMenuItem
             // 
             this.updateMemberToolStripMenuItem.Name = "updateMemberToolStripMenuItem";
-            this.updateMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateMemberToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.updateMemberToolStripMenuItem.Text = "Update Member";
             this.updateMemberToolStripMenuItem.Click += new System.EventHandler(this.updateMemberToolStripMenuItem_Click);
+            // 
+            // deleteMemeberToolStripMenuItem
+            // 
+            this.deleteMemeberToolStripMenuItem.Name = "deleteMemeberToolStripMenuItem";
+            this.deleteMemeberToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.deleteMemeberToolStripMenuItem.Text = "Delete Memeber";
+            this.deleteMemeberToolStripMenuItem.Click += new System.EventHandler(this.deleteMemeberToolStripMenuItem_Click);
             // 
             // FrmMembersList
             // 

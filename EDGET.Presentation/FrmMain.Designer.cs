@@ -267,6 +267,7 @@
             this.btnFamily.TabIndex = 9;
             this.btnFamily.Values.DropDownArrowColor = System.Drawing.Color.Empty;
             this.btnFamily.Values.Text = "Family";
+            this.btnFamily.Click += new System.EventHandler(this.btnFamily_Click);
             // 
             // FrmMain
             // 

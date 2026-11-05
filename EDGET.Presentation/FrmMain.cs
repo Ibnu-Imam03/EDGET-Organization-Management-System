@@ -1,5 +1,6 @@
 ﻿
 using EDGET.Business;
+using EDGET.Presentation.Family;
 using EDGET.Presentation.Members;
 using System;
 using System.Windows.Forms;
@@ -58,6 +59,16 @@ namespace EDGET.Presentation
         {
             pnlSidebar.Visible = false;
             LoadFormInPanel(new FrmMembersList());
+        }
+
+        private void btnFamily_Click(object sender, EventArgs e)
+        {
+            pnlSidebar.Visible = false;
+            LoadFormInPanel(new FrmListFamilies());
+
+            //FrmListFamilies frm = new FrmListFamilies();
+
+            //frm.Show();
         }
     }
 }

@@ -77,7 +77,7 @@ namespace EDGET.Presentation.Members
         {
             int memberID = Convert.ToInt32(dgvMembers.CurrentRow.Cells["MemberID"].Value);
 
-            frmShowMember frm = new frmShowMember(memberID);
+            frmShowFamily frm = new frmShowFamily(memberID);
 
             frm.Show();
         }

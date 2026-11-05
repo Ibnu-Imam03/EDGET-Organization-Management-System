@@ -81,6 +81,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Family\FrmListFamilies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Family\FrmListFamilies.Designer.cs">
+      <DependentUpon>FrmListFamilies.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     <Compile Include="UC_PersonInfo.Designer.cs">
       <DependentUpon>UC_PersonInfo.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Family\FrmListFamilies.resx">
+      <DependentUpon>FrmListFamilies.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>

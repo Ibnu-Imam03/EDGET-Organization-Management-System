@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace EDGET.Presentation.Members
 {
-    public partial class frmShowMember : Form
+    public partial class frmShowFamily : Form
     {
-        public frmShowMember(int PersoinID)
+        public frmShowFamily(int PersoinID)
         {
             InitializeComponent();
             LoadMembers(PersoinID );
@@ -41,17 +41,29 @@ namespace EDGET.Presentation.Members
             }
 
             // Load the associated Person information.
-            uC_PersonInfo1.LoadPersonInfo(Member.PersonID);
+            uC_PersonInfo2.LoadPersonInfo(Member.PersonID);
 
             // Display Member information.
-            lblDepartmet.Text = Member.Department;
+            lblAddress.Text = Member.Department;
             lblJoinDate.Text = Member.JoinDate.ToString("dd/MM/yyyy");
-            lblStudentID.Text = Member.StudentID;
+            lblFamilyName.Text = Member.StudentID;
             lblStudyYear.Text = Member.YearOfStudy.ToString();
         }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        
+
+        private void frmShowFamily_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmShowFamily_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

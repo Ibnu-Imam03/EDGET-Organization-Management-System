@@ -110,6 +110,7 @@
             // 
             // dtpJoinDate
             // 
+            this.dtpJoinDate.CalendarTodayDate = new System.DateTime(2026, 11, 4, 0, 0, 0, 0);
             this.dtpJoinDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpJoinDate.Location = new System.Drawing.Point(175, 239);
             this.dtpJoinDate.Name = "dtpJoinDate";

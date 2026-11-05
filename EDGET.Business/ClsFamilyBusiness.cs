@@ -70,7 +70,7 @@ namespace EDGET.Business
             return false;
         }
 
-        public bool DeleteFamily(int FamilyID)
+        public static bool DeleteFamily(int FamilyID)
         {
             return ClsFamilyDataAccess.DeleteFamily(FamilyID);
         }

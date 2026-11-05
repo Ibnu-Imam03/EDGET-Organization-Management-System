@@ -91,7 +91,7 @@
             this.updateMemberToolStripMenuItem,
             this.deleteMemeberToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(166, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
             // 
             // showMembersInfoToolStripMenuItem
             // 
@@ -105,18 +105,21 @@
             this.addNewMemberToolStripMenuItem.Name = "addNewMemberToolStripMenuItem";
             this.addNewMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addNewMemberToolStripMenuItem.Text = "Add New Famliy";
+            this.addNewMemberToolStripMenuItem.Click += new System.EventHandler(this.addNewMemberToolStripMenuItem_Click);
             // 
             // updateMemberToolStripMenuItem
             // 
             this.updateMemberToolStripMenuItem.Name = "updateMemberToolStripMenuItem";
             this.updateMemberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.updateMemberToolStripMenuItem.Text = "Update Family";
+            this.updateMemberToolStripMenuItem.Click += new System.EventHandler(this.updateMemberToolStripMenuItem_Click);
             // 
             // deleteMemeberToolStripMenuItem
             // 
             this.deleteMemeberToolStripMenuItem.Name = "deleteMemeberToolStripMenuItem";
             this.deleteMemeberToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteMemeberToolStripMenuItem.Text = "Delete Family";
+            this.deleteMemeberToolStripMenuItem.Click += new System.EventHandler(this.deleteMemeberToolStripMenuItem_Click);
             // 
             // FrmListFamilies
             // 

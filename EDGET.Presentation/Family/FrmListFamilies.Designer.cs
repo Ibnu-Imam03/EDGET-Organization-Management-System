@@ -91,13 +91,12 @@
             this.updateMemberToolStripMenuItem,
             this.deleteMemeberToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(166, 92);
             // 
             // showMembersInfoToolStripMenuItem
             // 
-            this.showMembersInfoToolStripMenuItem.Enabled = false;
             this.showMembersInfoToolStripMenuItem.Name = "showMembersInfoToolStripMenuItem";
-            this.showMembersInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showMembersInfoToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.showMembersInfoToolStripMenuItem.Text = "Show Family Info";
             this.showMembersInfoToolStripMenuItem.Click += new System.EventHandler(this.showMembersInfoToolStripMenuItem_Click);
             // 

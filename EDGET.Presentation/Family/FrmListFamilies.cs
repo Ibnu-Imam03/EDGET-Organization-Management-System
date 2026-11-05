@@ -39,7 +39,17 @@ namespace EDGET.Presentation.Family
 
         private void showMembersInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (dgvFamilies.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a family first.");
+                return;
+            }
 
+            int FamilyID = Convert.ToInt32(dgvFamilies.CurrentRow.Cells["FamilyID"].Value);
+
+            frmShowFamily frm = new frmShowFamily(FamilyID);
+
+            frm.ShowDialog();
         }
     }
 }

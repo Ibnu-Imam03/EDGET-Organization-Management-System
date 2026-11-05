@@ -110,5 +110,10 @@ namespace EDGET.Business
         {
             return ClsMemberDataAccess.DeleteMember(memberID);
         }
+
+        public  static  bool IsPersonEsitedInMembere(int PersonID)
+        {
+            return ClsMemberDataAccess.IsPersonEsitedInMembere(PersonID);
+        }
     }
 }

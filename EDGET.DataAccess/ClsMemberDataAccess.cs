@@ -194,6 +194,35 @@ namespace EDGET.DataAccess
             }catch(Exception ex) { return false; }
         }
 
+        public static bool IsPersonEsitedInMembere(int PersonID)
+        {
+            try
+            {
+                using (SqlConnection conn = DbConnectionFactory.GetConnection())
+                {
+                    string query = "SELECT 1 FROM Member   WHERE PersonID = @PersonID ";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@PersonID", PersonID);
+
+                        conn.Open();
+
+                        object resalte = cmd.ExecuteScalar();
+
+                        if (resalte != null)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { return false; }
+        }
+
 
     }
 }

@@ -9,6 +9,7 @@ namespace EDGET.Presentation.Family
         private ClsFamilyBusiness _Family;
         private ClsPersonBusiness _Person;
 
+
         public frmAddEditFamily()
         {
             InitializeComponent();
@@ -128,6 +129,13 @@ namespace EDGET.Presentation.Family
                     MessageBoxIcon.Warning);
 
                 txtFamilyName.Focus();
+                return;
+            }
+
+            if (ClsMemberBusiness.IsPersonEsitedInMembere(_Person.PersonID))
+            {
+                MessageBox.Show("This Person is already registered as a Member and cannot be registered as a Family.","Person Already Exists",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
                 return;
             }
 
